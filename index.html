@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="J.A.R.V.I.S. is an AI personal assistant project focused on productivity, office workflows, voice interaction, and privacy-conscious automation.">
+  <meta name="theme-color" content="#07111f">
+  <title>J.A.R.V.I.S. — Your Personal AI Assistant</title>
+  <style>
+    :root{--bg:#07111f;--panel:#0d1b2c;--panel2:#10243a;--text:#edf6ff;--muted:#9bb0c7;--cyan:#58d9f5;--blue:#5b8cff;--line:rgba(132,190,225,.18);--green:#70e0b0}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(43,123,180,.18),transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:5;background:rgba(7,17,31,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.13em;font-size:1.05rem}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--cyan)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:10px;background:linear-gradient(110deg,var(--cyan),#80b8ff);color:#061321;font-weight:750;border:0}
+    .hero{padding:92px 0 76px;display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center}.eyebrow{color:var(--cyan);font-weight:750;letter-spacing:.18em;text-transform:uppercase;font-size:.76rem}.hero h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:1.04;letter-spacing:-.055em;margin:16px 0}.hero h1 span{color:var(--cyan)}.lead{font-size:1.13rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.secondary{border:1px solid var(--line);padding:10px 17px;border-radius:10px;color:var(--text)}
+    .orb-wrap{display:grid;place-items:center;min-height:330px}.orb{width:min(300px,70vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(88,217,245,.55);display:grid;place-items:center;position:relative;box-shadow:0 0 45px rgba(88,217,245,.16),inset 0 0 42px rgba(88,217,245,.12)}.orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(88,217,245,.24);border-radius:50%;inset:18px}.orb:after{inset:42px;border-style:dashed;animation:spin 28s linear infinite}.core{width:105px;height:105px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d7fbff,#58d9f5 35%,#14527a 72%);box-shadow:0 0 55px rgba(88,217,245,.6)}@keyframes spin{to{transform:rotate(360deg)}}
+    .status{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:.85rem;margin-top:18px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+    section{padding:70px 0;border-top:1px solid var(--line)}.section-head{max-width:700px;margin-bottom:30px}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:8px 0 12px}.section-head p,.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(16,36,58,.9),rgba(13,27,44,.88));border:1px solid var(--line);border-radius:16px;padding:22px}.icon{font-size:1.45rem}.card h3{margin:10px 0 6px}.card p{color:var(--muted);margin:0;font-size:.95rem}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--cyan);font-size:.78rem;margin:4px 5px 4px 0}
+    .roadmap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.step{display:flex;gap:14px;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(13,27,44,.65)}.num{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(88,217,245,.13);color:var(--cyan);font-weight:800}
+    .callout{padding:28px;border:1px solid rgba(88,217,245,.28);background:linear-gradient(120deg,rgba(20,67,91,.45),rgba(13,27,44,.7));border-radius:18px}
+    footer{padding:32px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:65px}.orb-wrap{min-height:250px}.grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.two,.roadmap{grid-template-columns:1fr}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}.wrap{width:min(100% - 28px,1120px)}nav{height:64px}.hero{padding:55px 0}.hero h1{font-size:2.8rem}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav>
+    <a class="brand" href="#home">J.A.R.V.I.S<span>.</span></a>
+    <div class="navlinks"><a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#roadmap">Roadmap</a><a href="#privacy">Privacy</a></div>
+    <a class="btn" href="#contact">Project overview</a>
+  </nav></div>
+</header>
+<main id="home">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">An independent AI assistant project</div>
+      <h1>Meet <span>J.A.R.V.I.S.</span></h1>
+      <p class="lead">A personal AI assistant in development, designed to bring everyday productivity, office workflows, voice interaction, and intelligent tools together in one experience.</p>
+      <div class="actions"><a class="btn" href="#capabilities">Explore the vision</a><a class="secondary" href="#roadmap">View development roadmap</a></div>
+      <div class="status"><span class="dot"></span> Active development · Built with Google AI Studio and Gemini technologies</div>
+    </div>
+    <div class="orb-wrap" aria-label="Abstract futuristic assistant interface artwork"><div class="orb"><div class="core"></div></div></div>
+  </div>
+</main>
+<section id="about"><div class="wrap two">
+  <div class="section-head"><div class="eyebrow">The project</div><h2>One assistant. Many useful workflows.</h2><p>J.A.R.V.I.S. (Just A Rather Very Intelligent System) is an independent project led by Manjeet Kumar in India. The goal is to create a practical assistant that can support both personal productivity and office operations.</p></div>
+  <div class="card"><h3>Project principles</h3><p>Useful by design, privacy-conscious, security-first, transparent about what is implemented, and built to work across supported devices wherever practical.</p><div style="margin-top:14px"><span class="tag">Productivity</span><span class="tag">Office workflows</span><span class="tag">Voice interaction</span><span class="tag">Cross-device vision</span><span class="tag">Privacy-first</span></div></div>
+</div></section>
+<section id="capabilities"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Capabilities in the vision</div><h2>Designed around real-world work</h2><p>The following areas describe the project's intended capabilities. Availability and maturity may vary while development continues.</p></div>
+  <div class="grid">
+    <article class="card"><div class="icon">✦</div><h3>AI assistance</h3><p>Conversational help for questions, research, planning, and everyday tasks using supported AI models.</p></article>
+    <article class="card"><div class="icon">◉</div><h3>Voice interaction</h3><p>A voice-led experience with a focus on natural interaction and Hindi-language usability.</p></article>
+    <article class="card"><div class="icon">▤</div><h3>Office productivity</h3><p>Planned workflows for documents, tasks, reminders, meetings, and operational coordination.</p></article>
+    <article class="card"><div class="icon">⌘</div><h3>Connected AI tools</h3><p>A modular approach to AI providers and tools, with reliability and fallback behavior as design goals.</p></article>
+    <article class="card"><div class="icon">▣</div><h3>Personal workspace</h3><p>A unified interface intended to make useful information and workflows easier to access.</p></article>
+    <article class="card"><div class="icon">⌁</div><h3>Device flexibility</h3><p>A web-first direction for access across supported Android devices and computers.</p></article>
+  </div>
+</div></section>
+<section id="roadmap"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Development roadmap</div><h2>Building carefully, step by step</h2><p>These are development priorities, not claims that every item is already available.</p></div>
+  <div class="roadmap">
+    <div class="step"><div class="num">1</div><div><strong>Core assistant experience</strong><div class="muted">Continue improving the working application, interface, and core AI workflows.</div></div></div>
+    <div class="step"><div class="num">2</div><div><strong>Reliable AI integration</strong><div class="muted">Improve provider integration, model selection, error handling, and fallback design.</div></div></div>
+    <div class="step"><div class="num">3</div><div><strong>Voice and language</strong><div class="muted">Test speech input and output on target devices and improve Hindi support.</div></div></div>
+    <div class="step"><div class="num">4</div><div><strong>Security and privacy</strong><div class="muted">Strengthen authentication, access control, data handling, and transparent privacy practices.</div></div></div>
+    <div class="step"><div class="num">5</div><div><strong>Office workflows</strong><div class="muted">Develop and validate document, task, reminder, and meeting workflows.</div></div></div>
+    <div class="step"><div class="num">6</div><div><strong>Public product release</strong><div class="muted">Prepare documentation, support channels, and a sustainable free and premium model.</div></div></div>
+  </div>
+</div></section>
+<section id="privacy"><div class="wrap two">
+  <div class="section-head"><div class="eyebrow">Trust and responsibility</div><h2>Security and privacy matter</h2><p>J.A.R.V.I.S. is being developed with privacy and responsible handling of user information as priorities. Specific safeguards will be documented as they are implemented and tested.</p></div>
+  <div class="card"><h3>Our commitments</h3><p>We aim to use clear permissions, protect credentials, apply access controls, minimize unnecessary data collection, and communicate limitations honestly. No claim of independent security certification is made.</p></div>
+</div></section>
+<section id="plans"><div class="wrap">
+  <div class="callout"><div class="eyebrow">Sustainable product vision</div><h2 style="margin:8px 0">Free to get started. More capability over time.</h2><p class="muted">The proposed business model is a free basic experience with optional paid plans for advanced capabilities in the future. Pricing, availability, and plan details have not yet been announced.</p></div>
+</div></section>
+<section id="contact"><div class="wrap two">
+  <div class="section-head"><div class="eyebrow">Founder</div><h2>Manjeet Kumar</h2><p>Independent developer · India</p></div>
+  <div class="card"><h3>J.A.R.V.I.S. project</h3><p>For developer-community discussion or project collaboration, please use the public project discussion below.</p><p style="margin-top:16px"><a class="btn" href="https://discuss.ai.google.dev/t/request-for-developer-guidance-and-technical-support-for-my-j-a-r-v-i-s-ai-personal-assistant-project/201854" target="_blank" rel="noopener">View project discussion ↗</a></p></div>
+</div></section>
+<footer><div class="wrap foot"><div>© <span id="year"></span> J.A.R.V.I.S. Project · Manjeet Kumar</div><div>Independent project. Not affiliated with or endorsed by Google.</div></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
