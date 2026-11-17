@@ -3,73 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="J.A.R.V.I.S. is an AI personal assistant project focused on productivity, office workflows, voice interaction, and privacy-conscious automation.">
-  <meta name="theme-color" content="#07111f">
-  <title>J.A.R.V.I.S. — Your Personal AI Assistant</title>
+  <meta name="description" content="J.A.R.V.I.S. is an independent AI personal assistant project focused on productivity, office workflows, voice interaction, and privacy-conscious automation.">
+  <meta name="theme-color" content="#050b14">
+  <title>J.A.R.V.I.S. — Personal AI Assistant Project</title>
   <style>
-    :root{--bg:#07111f;--panel:#0d1b2c;--panel2:#10243a;--text:#edf6ff;--muted:#9bb0c7;--cyan:#58d9f5;--blue:#5b8cff;--line:rgba(132,190,225,.18);--green:#70e0b0}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(43,123,180,.18),transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:5;background:rgba(7,17,31,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.13em;font-size:1.05rem}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--cyan)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:10px;background:linear-gradient(110deg,var(--cyan),#80b8ff);color:#061321;font-weight:750;border:0}
-    .hero{padding:92px 0 76px;display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center}.eyebrow{color:var(--cyan);font-weight:750;letter-spacing:.18em;text-transform:uppercase;font-size:.76rem}.hero h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:1.04;letter-spacing:-.055em;margin:16px 0}.hero h1 span{color:var(--cyan)}.lead{font-size:1.13rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.secondary{border:1px solid var(--line);padding:10px 17px;border-radius:10px;color:var(--text)}
-    .orb-wrap{display:grid;place-items:center;min-height:330px}.orb{width:min(300px,70vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(88,217,245,.55);display:grid;place-items:center;position:relative;box-shadow:0 0 45px rgba(88,217,245,.16),inset 0 0 42px rgba(88,217,245,.12)}.orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(88,217,245,.24);border-radius:50%;inset:18px}.orb:after{inset:42px;border-style:dashed;animation:spin 28s linear infinite}.core{width:105px;height:105px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d7fbff,#58d9f5 35%,#14527a 72%);box-shadow:0 0 55px rgba(88,217,245,.6)}@keyframes spin{to{transform:rotate(360deg)}}
-    .status{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:.85rem;margin-top:18px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
-    section{padding:70px 0;border-top:1px solid var(--line)}.section-head{max-width:700px;margin-bottom:30px}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:8px 0 12px}.section-head p,.muted{color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(16,36,58,.9),rgba(13,27,44,.88));border:1px solid var(--line);border-radius:16px;padding:22px}.icon{font-size:1.45rem}.card h3{margin:10px 0 6px}.card p{color:var(--muted);margin:0;font-size:.95rem}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--cyan);font-size:.78rem;margin:4px 5px 4px 0}
-    .roadmap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.step{display:flex;gap:14px;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(13,27,44,.65)}.num{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(88,217,245,.13);color:var(--cyan);font-weight:800}
-    .callout{padding:28px;border:1px solid rgba(88,217,245,.28);background:linear-gradient(120deg,rgba(20,67,91,.45),rgba(13,27,44,.7));border-radius:18px}
-    footer{padding:32px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:65px}.orb-wrap{min-height:250px}.grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.two,.roadmap{grid-template-columns:1fr}}
-    @media(max-width:520px){.grid{grid-template-columns:1fr}.wrap{width:min(100% - 28px,1120px)}nav{height:64px}.hero{padding:55px 0}.hero h1{font-size:2.8rem}}
+    :root{color-scheme:dark;--bg:#050b14;--panel:rgba(10,24,39,.82);--panel2:#0c1c2d;--text:#eaf8ff;--muted:#91a9bd;--cyan:#63e5ff;--blue:#4c9dff;--line:rgba(99,229,255,.2);--green:#75efc1;--gold:#e8bd72;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,rgba(22,112,157,.25),transparent 42%),radial-gradient(ellipse at 100% 45%,rgba(22,75,126,.12),transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(99,229,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(99,229,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin-inline:auto}.skip{position:absolute;left:-999px;top:8px;background:var(--cyan);color:#03101a;padding:8px 12px;z-index:20}.skip:focus{left:12px}
+    header{position:sticky;top:0;z-index:10;background:rgba(5,11,20,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-weight:900;letter-spacing:.16em;font-size:1.05rem;white-space:nowrap}.brand span{color:var(--cyan);text-shadow:0 0 16px rgba(99,229,255,.8)}.navlinks{display:flex;align-items:center;gap:25px;color:#a8bdce;font-size:.88rem}.navlinks a{transition:color .2s}.navlinks a:hover,.navlinks a:focus-visible{color:var(--cyan)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 18px;border:1px solid rgba(99,229,255,.45);border-radius:5px;background:linear-gradient(110deg,rgba(99,229,255,.96),rgba(76,157,255,.94));color:#03111b;font-weight:850;letter-spacing:.02em;box-shadow:0 0 24px rgba(60,190,235,.16);transition:transform .2s,box-shadow .2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(60,190,235,.3)}.secondary{display:inline-flex;align-items:center;justify-content:center;padding:10px 17px;border:1px solid var(--line);border-radius:5px;color:var(--text);background:rgba(8,22,36,.55)}.secondary:hover{border-color:var(--cyan);color:var(--cyan)}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .mobile-menu{display:none;position:relative}.mobile-menu summary{list-style:none;cursor:pointer;border:1px solid var(--line);padding:7px 11px;color:var(--cyan);border-radius:4px}.mobile-menu summary::-webkit-details-marker{display:none}.mobile-menu[open] .mobile-panel{display:grid}.mobile-panel{display:none;position:absolute;right:0;top:45px;min-width:190px;padding:10px;background:#091827;border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 40px #0009}.mobile-panel a{padding:9px 10px;color:var(--muted)}
+    .hero{position:relative;min-height:610px;padding:86px 0 78px;display:grid;grid-template-columns:1.08fr .92fr;gap:35px;align-items:center}.hero-copy{position:relative;z-index:2}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font-weight:850;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem}.eyebrow:before{content:"";width:27px;height:1px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}.hero h1{font-size:clamp(3.2rem,7vw,6.2rem);line-height:.99;letter-spacing:-.065em;margin:22px 0 20px}.hero h1 span{display:block;color:var(--cyan);text-shadow:0 0 30px rgba(99,229,255,.24)}.lead{font-size:1.12rem;color:#a9bdce;max-width:610px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.status{display:flex;align-items:center;gap:10px;color:var(--green);font-size:.8rem;letter-spacing:.035em;margin-top:28px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 13px var(--green);animation:pulse 2s infinite}
+    .visual{min-height:420px;display:grid;place-items:center;position:relative;isolation:isolate}.visual:before{content:"";position:absolute;width:min(440px,95%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(26,153,197,.13),transparent 67%);filter:blur(8px)}.reactor{width:min(340px,78vw);aspect-ratio:1;position:relative;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(99,229,255,.52);box-shadow:0 0 32px rgba(51,190,235,.12),inset 0 0 35px rgba(51,190,235,.08)}.reactor:before,.reactor:after{content:"";position:absolute;border:1px solid rgba(99,229,255,.3);border-radius:50%;inset:17px}.reactor:after{inset:43px;border-style:dashed;animation:spin 32s linear infinite}.ring{position:absolute;inset:-13px;border:1px dashed rgba(99,229,255,.25);border-radius:50%;animation:spin 48s linear infinite reverse}.ring:before,.ring:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan);top:13%;left:19%}.ring:after{top:auto;left:auto;right:10%;bottom:24%;width:5px;height:5px}.core{width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#f2ffff 0 5%,#aaf5ff 15%,#43c9ef 38%,#12618b 72%,#071b30 100%);box-shadow:0 0 24px rgba(99,229,255,.8),0 0 75px rgba(50,180,230,.38),inset 0 0 18px #eaffff}
+    .orbit-label{position:absolute;padding:7px 10px;border:1px solid var(--line);background:rgba(5,16,28,.82);color:#bcefff;font:700 .65rem ui-monospace,monospace;letter-spacing:.12em}.label-a{top:12%;right:-3%}.label-b{bottom:15%;left:-7%}.label-c{top:49%;right:-12%}.visual-caption{position:absolute;bottom:0;color:#7295aa;font: .65rem ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}
+    @keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.4;box-shadow:0 0 4px var(--green)}}
+    section{position:relative;padding:82px 0;border-top:1px solid var(--line)}section:before{content:"";position:absolute;top:-1px;left:max(22px,calc((100% - var(--max))/2));width:76px;height:1px;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}.section-head{max-width:720px;margin-bottom:34px}.section-head h2{font-size:clamp(2rem,4.5vw,3.15rem);line-height:1.12;letter-spacing:-.045em;margin:12px 0}.section-head p,.muted{color:var(--muted)}.section-kicker{color:var(--cyan);font: .68rem ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(13,34,53,.9),rgba(7,19,32,.92));border:1px solid var(--line);border-radius:8px;padding:24px;transition:transform .22s,border-color .22s,box-shadow .22s}.card:before{content:"";position:absolute;top:0;left:0;width:42px;height:2px;background:var(--cyan);box-shadow:0 0 13px var(--cyan)}.card:hover{transform:translateY(-4px);border-color:rgba(99,229,255,.48);box-shadow:0 14px 35px rgba(0,0,0,.2)}.icon{font-size:1.35rem;color:var(--cyan);text-shadow:0 0 15px rgba(99,229,255,.5)}.card h3{margin:12px 0 7px;font-size:1.08rem}.card p{color:var(--muted);margin:0;font-size:.93rem}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.tag{display:inline-block;border:1px solid var(--line);border-radius:3px;padding:5px 10px;color:#a9eaff;font-size:.74rem;margin:4px 5px 4px 0;background:rgba(99,229,255,.035)}
+    .roadmap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.step{display:flex;gap:15px;padding:20px;border:1px solid var(--line);border-radius:7px;background:rgba(9,25,41,.7)}.num{flex:0 0 36px;height:36px;border:1px solid rgba(99,229,255,.4);display:grid;place-items:center;color:var(--cyan);font:800 .85rem ui-monospace,monospace;background:rgba(99,229,255,.08)}.step strong{font-size:.97rem}.step .muted{font-size:.88rem;margin-top:4px}
+    .callout{position:relative;padding:34px;border:1px solid rgba(99,229,255,.32);background:linear-gradient(115deg,rgba(14,63,83,.48),rgba(8,22,37,.84));border-radius:8px;overflow:hidden}.callout:after{content:"";position:absolute;right:-60px;top:-95px;width:230px;height:230px;border:1px solid rgba(99,229,255,.2);border-radius:50%;box-shadow:0 0 0 18px rgba(99,229,255,.025),0 0 0 38px rgba(99,229,255,.02)}.callout h2{font-size:clamp(1.65rem,4vw,2.5rem);line-height:1.15;margin:12px 0}.callout p{max-width:760px}
+    footer{padding:30px 0;color:#8299ac;font-size:.82rem;border-top:1px solid var(--line)}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:70px;gap:10px}.visual{min-height:380px}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:14px}.nav-cta{display:none}}
+    @media(max-width:620px){.wrap{width:calc(100% - 30px)}nav{min-height:65px}.navlinks{display:none}.mobile-menu{display:block}.hero{padding:58px 0 55px;min-height:unset}.hero h1{font-size:clamp(3rem,15vw,4.7rem)}.lead{font-size:1rem}.visual{min-height:320px}.reactor{width:min(275px,75vw)}.orbit-label{font-size:.56rem}.label-a{right:-2%}.label-b{left:-2%}.label-c{right:-5%}section{padding:62px 0}.grid,.two,.roadmap{grid-template-columns:1fr}.card{padding:21px}.callout{padding:25px}.foot{display:grid;gap:8px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
+<a class="skip" href="#home">Skip to content</a>
 <header>
-  <div class="wrap"><nav>
+  <div class="wrap"><nav aria-label="Main navigation">
     <a class="brand" href="#home">J.A.R.V.I.S<span>.</span></a>
     <div class="navlinks"><a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#roadmap">Roadmap</a><a href="#privacy">Privacy</a></div>
-    <a class="btn" href="#contact">Project overview</a>
+    <a class="nav-cta" href="#contact">Project overview <span aria-hidden="true">↗</span></a>
+    <details class="mobile-menu"><summary aria-label="Open navigation menu">MENU</summary><div class="mobile-panel"><a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#roadmap">Roadmap</a><a href="#privacy">Privacy</a><a href="#contact">Project overview</a></div></details>
   </nav></div>
 </header>
 <main id="home">
   <div class="wrap hero">
-    <div>
-      <div class="eyebrow">An independent AI assistant project</div>
+    <div class="hero-copy">
+      <div class="eyebrow">Independent AI assistant project</div>
       <h1>Meet <span>J.A.R.V.I.S.</span></h1>
       <p class="lead">A personal AI assistant in development, designed to bring everyday productivity, office workflows, voice interaction, and intelligent tools together in one experience.</p>
-      <div class="actions"><a class="btn" href="#capabilities">Explore the vision</a><a class="secondary" href="#roadmap">View development roadmap</a></div>
-      <div class="status"><span class="dot"></span> Active development · Built with Google AI Studio and Gemini technologies</div>
+      <div class="actions"><a class="btn" href="#capabilities">Explore the vision <span aria-hidden="true">→</span></a><a class="secondary" href="#roadmap">View development roadmap</a></div>
+      <div class="status"><span class="dot"></span> ACTIVE DEVELOPMENT <span aria-hidden="true">·</span> Google AI Studio + Gemini technologies</div>
     </div>
-    <div class="orb-wrap" aria-label="Abstract futuristic assistant interface artwork"><div class="orb"><div class="core"></div></div></div>
+    <div class="visual" role="img" aria-label="Abstract cyan futuristic AI reactor interface">
+      <div class="reactor"><div class="ring"></div><div class="core"></div><span class="orbit-label label-a">NEURAL CORE / 01</span><span class="orbit-label label-b">SYSTEMS ONLINE*</span><span class="orbit-label label-c">J.A.R.V.I.S.</span></div>
+      <div class="visual-caption">Concept interface · visual identity</div>
+    </div>
   </div>
 </main>
 <section id="about"><div class="wrap two">
-  <div class="section-head"><div class="eyebrow">The project</div><h2>One assistant. Many useful workflows.</h2><p>J.A.R.V.I.S. (Just A Rather Very Intelligent System) is an independent project led by Manjeet Kumar in India. The goal is to create a practical assistant that can support both personal productivity and office operations.</p></div>
-  <div class="card"><h3>Project principles</h3><p>Useful by design, privacy-conscious, security-first, transparent about what is implemented, and built to work across supported devices wherever practical.</p><div style="margin-top:14px"><span class="tag">Productivity</span><span class="tag">Office workflows</span><span class="tag">Voice interaction</span><span class="tag">Cross-device vision</span><span class="tag">Privacy-first</span></div></div>
+  <div class="section-head"><div class="eyebrow">The project</div><h2>One assistant.<br>Many useful workflows.</h2><p>J.A.R.V.I.S. (Just A Rather Very Intelligent System) is an independent project led by Manjeet Kumar in India. The goal is to create a practical assistant that can support both personal productivity and office operations.</p></div>
+  <div class="card"><h3>Project principles</h3><p>Useful by design, privacy-conscious, security-first, transparent about what is implemented, and built to work across supported devices wherever practical.</p><div style="margin-top:16px"><span class="tag">Productivity</span><span class="tag">Office workflows</span><span class="tag">Voice interaction</span><span class="tag">Cross-device vision</span><span class="tag">Privacy-first</span></div></div>
 </div></section>
 <section id="capabilities"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Capabilities in the vision</div><h2>Designed around real-world work</h2><p>The following areas describe the project's intended capabilities. Availability and maturity may vary while development continues.</p></div>
   <div class="grid">
-    <article class="card"><div class="icon">✦</div><h3>AI assistance</h3><p>Conversational help for questions, research, planning, and everyday tasks using supported AI models.</p></article>
-    <article class="card"><div class="icon">◉</div><h3>Voice interaction</h3><p>A voice-led experience with a focus on natural interaction and Hindi-language usability.</p></article>
-    <article class="card"><div class="icon">▤</div><h3>Office productivity</h3><p>Planned workflows for documents, tasks, reminders, meetings, and operational coordination.</p></article>
-    <article class="card"><div class="icon">⌘</div><h3>Connected AI tools</h3><p>A modular approach to AI providers and tools, with reliability and fallback behavior as design goals.</p></article>
-    <article class="card"><div class="icon">▣</div><h3>Personal workspace</h3><p>A unified interface intended to make useful information and workflows easier to access.</p></article>
-    <article class="card"><div class="icon">⌁</div><h3>Device flexibility</h3><p>A web-first direction for access across supported Android devices and computers.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">✦</div><h3>AI assistance</h3><p>Conversational help for questions, research, planning, and everyday tasks using supported AI models.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">◉</div><h3>Voice interaction</h3><p>A voice-led experience with a focus on natural interaction and Hindi-language usability.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">▤</div><h3>Office productivity</h3><p>Planned workflows for documents, tasks, reminders, meetings, and operational coordination.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">⌘</div><h3>Connected AI tools</h3><p>A modular approach to AI providers and tools, with reliability and fallback behavior as design goals.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">▣</div><h3>Personal workspace</h3><p>A unified interface intended to make useful information and workflows easier to access.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">⌁</div><h3>Device flexibility</h3><p>A web-first direction for access across supported Android devices and computers.</p></article>
   </div>
 </div></section>
 <section id="roadmap"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Development roadmap</div><h2>Building carefully, step by step</h2><p>These are development priorities, not claims that every item is already available.</p></div>
   <div class="roadmap">
-    <div class="step"><div class="num">1</div><div><strong>Core assistant experience</strong><div class="muted">Continue improving the working application, interface, and core AI workflows.</div></div></div>
-    <div class="step"><div class="num">2</div><div><strong>Reliable AI integration</strong><div class="muted">Improve provider integration, model selection, error handling, and fallback design.</div></div></div>
-    <div class="step"><div class="num">3</div><div><strong>Voice and language</strong><div class="muted">Test speech input and output on target devices and improve Hindi support.</div></div></div>
-    <div class="step"><div class="num">4</div><div><strong>Security and privacy</strong><div class="muted">Strengthen authentication, access control, data handling, and transparent privacy practices.</div></div></div>
-    <div class="step"><div class="num">5</div><div><strong>Office workflows</strong><div class="muted">Develop and validate document, task, reminder, and meeting workflows.</div></div></div>
-    <div class="step"><div class="num">6</div><div><strong>Public product release</strong><div class="muted">Prepare documentation, support channels, and a sustainable free and premium model.</div></div></div>
+    <div class="step"><div class="num">01</div><div><strong>Core assistant experience</strong><div class="muted">Continue improving the working application, interface, and core AI workflows.</div></div></div>
+    <div class="step"><div class="num">02</div><div><strong>Reliable AI integration</strong><div class="muted">Improve provider integration, model selection, error handling, and fallback design.</div></div></div>
+    <div class="step"><div class="num">03</div><div><strong>Voice and language</strong><div class="muted">Test speech input and output on target devices and improve Hindi support.</div></div></div>
+    <div class="step"><div class="num">04</div><div><strong>Security and privacy</strong><div class="muted">Strengthen authentication, access control, data handling, and transparent privacy practices.</div></div></div>
+    <div class="step"><div class="num">05</div><div><strong>Office workflows</strong><div class="muted">Develop and validate document, task, reminder, and meeting workflows.</div></div></div>
+    <div class="step"><div class="num">06</div><div><strong>Public product release</strong><div class="muted">Prepare documentation, support channels, and a sustainable free and premium model.</div></div></div>
   </div>
 </div></section>
 <section id="privacy"><div class="wrap two">
@@ -77,13 +87,13 @@
   <div class="card"><h3>Our commitments</h3><p>We aim to use clear permissions, protect credentials, apply access controls, minimize unnecessary data collection, and communicate limitations honestly. No claim of independent security certification is made.</p></div>
 </div></section>
 <section id="plans"><div class="wrap">
-  <div class="callout"><div class="eyebrow">Sustainable product vision</div><h2 style="margin:8px 0">Free to get started. More capability over time.</h2><p class="muted">The proposed business model is a free basic experience with optional paid plans for advanced capabilities in the future. Pricing, availability, and plan details have not yet been announced.</p></div>
+  <div class="callout"><div class="eyebrow">Sustainable product vision</div><h2>Free to get started.<br>More capability over time.</h2><p class="muted">The proposed business model is a free basic experience with optional paid plans for advanced capabilities in the future. Pricing, availability, and plan details have not yet been announced.</p></div>
 </div></section>
 <section id="contact"><div class="wrap two">
   <div class="section-head"><div class="eyebrow">Founder</div><h2>Manjeet Kumar</h2><p>Independent developer · India</p></div>
-  <div class="card"><h3>J.A.R.V.I.S. project</h3><p>For developer-community discussion or project collaboration, please use the public project discussion below.</p><p style="margin-top:16px"><a class="btn" href="https://discuss.ai.google.dev/t/request-for-developer-guidance-and-technical-support-for-my-j-a-r-v-i-s-ai-personal-assistant-project/201854" target="_blank" rel="noopener">View project discussion ↗</a></p></div>
+  <div class="card"><h3>J.A.R.V.I.S. project</h3><p>For developer-community discussion or project collaboration, please use the public project discussion below.</p><p style="margin-top:18px"><a class="btn" href="https://discuss.ai.google.dev/t/request-for-developer-guidance-and-technical-support-for-my-j-a-r-v-i-s-ai-personal-assistant-project/201854" target="_blank" rel="noopener noreferrer">View project discussion <span aria-hidden="true">↗</span></a></p></div>
 </div></section>
-<footer><div class="wrap foot"><div>© <span id="year"></span> J.A.R.V.I.S. Project · Manjeet Kumar</div><div>Independent project. Not affiliated with or endorsed by Google.</div></div></footer>
+<footer><div class="wrap foot"><div>© <span id="year">2026</span> J.A.R.V.I.S. Project · Manjeet Kumar</div><div>Independent project. Not affiliated with or endorsed by Google.</div></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
